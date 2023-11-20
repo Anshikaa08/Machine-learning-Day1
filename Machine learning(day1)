@@ -1,0 +1,144 @@
+Learning part:-MACHINE LEARNING(Day 1)
+
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+y=[2,3,4,5,6]
+plt.plot(x,y)
+plt.xlabel('x-axis label')
+plt.ylabel('y-axis label')
+plt.title('simple line plot')
+plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Line plot in Python using Matplotlib
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Sine Wave')
+plt.show()
+
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+y=[2,31,4,5,6]
+plt.plot(x,y)
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Sample line plot')
+plt.show()
+
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+y=[2,3,40,5,6]
+plt.scatter(x,y,color='red',marker='o')
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('scatter plot')
+
+BAR PLOT
+
+import matplotlib.pyplot as plt
+categories=['Category A','Category B','Category C']
+values =[4,7,2]
+plt.bar(categories,values,color='blue')
+
+import matplotlib.pyplot as plt
+x=[1,2,3,4,4]
+y1=[2,3,4,5,6]
+y2=[1,2,3,4,5]
+
+plt.plot(x,y1,label='Series 1',linestyle='-',marker='o',color='blue')
+plt.plot(x,y2,label='Series 2',linestyle='--',marker='x',color='red')
+
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('Multiple line plots')
+plt.legend()
+plt.show()
+
+plt.savefig('plot.png')
+
+it is popular machine learning library in pyton
+
+#important libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score,classification_report,confusion_matrix
+
+
+NUMPY
+
+import numpy as np
+array_1d = np.array([1,2,3,4,5])
+array_2d = np.array([[1,2,3],[4,5,6]])
+result = np.sum(array_1d)
+print(result)
+
+MATPLOTLIB
+
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+y=[2,3,4,5,6]
+plt.plot(x,y)
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('simple line plot')
+plt.show()
+
+SKLEARN from sklearn import datasets
+
+from sklearn import datasets
+
+iris = datasets.load_iris()
+x=iris.data
+y=iris.target
+print('Feature matrix(x):')
+print(x[:5])
+print('\nTarget vector (y):')
+print(y[:5])
+
+
+scikit-learn
+
+
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2,random_state=42)
+print(x_train)
+
+
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+x_train_scaled = scaler.fit_transform(x_train)
+x_test_scaled = scaler.transform(x_test)
+
+from sklearn.linear_model import LogisticRegression
+# Initialize the logistic regression model
+model = LogisticRegression()
+
+# Train the model on the scaled training data
+model.fit(x_train_scaled, y_train)
+
+
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+# Make predictions on the scaled testing data
+y_pred = model.predict(x_test_scaled)
+
+# Evaluate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy:.2f}')
+
+# Display classification report
+print('Classification Report:\n', classification_report(y_test, y_pred))
+
+# Display confusion matrix
+conf_matrix = confusion_matrix(y_test, y_pred)
+print('Confusion Matrix:\n', conf_matrix)
